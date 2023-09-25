@@ -24,19 +24,6 @@ Create s3 bucket
 6)  What exactly AWS does --> Whereever we store the object in create multiple replicas of it availabilies zones, in data centers
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # -----------------------------------------------------
 
 Why use S3 buckets?
@@ -82,6 +69,21 @@ NOTE : Bydefault if we use to store the same file it will replace the file,(If v
 ![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/dbcf22d2-8ee6-4e02-b3a8-0a2255725680)
 
 
+Host satic website
+--
+1) Upload static page
+2) ![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/d63fbfb0-4230-482b-abd2-e69830a7e98e)
+3) Go to bucket properties --> Static website hosting  --> Enable it
+4) ![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/e732fd46-7c76-4a0b-a9ad-d2d55bb86e18) add index.html page
+5) Save changes
+6) Now you will get an URL in the bucket properites properties, When we try to hit it it will show error forbidden eroor 403
+7) Becuase while creating we have selected block public access --> uncheck ti
+8) ![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/bdb1103a-f6aa-4f63-92e7-e158271de99c)
+9) Now we have to add permission to access everyone in the internet
+10) ![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/405aedba-9e21-46f6-88c1-fd183c16bb3d)
+11) we need to give permisison to access the bucket to everyone in the internet
+12) ![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/a175aa4c-d475-4426-a976-0fcfd4617e0b)
+13) NOTE : the page should be light weight -- like don't have more javascript that will do API calls -- We need to enable CORS (be'coz byfeault browser will block or reject it)  
 
 
 
