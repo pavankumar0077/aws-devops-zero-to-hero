@@ -4,11 +4,40 @@
 
 What is Amazon S3?
 
-Simple Storage Service is a scalable and secure cloud storage service provided by Amazon Web Services (AWS). It allows you to store and retrieve any amount of data from anywhere on the web.
+**Simple Storage Service** is a scalable and secure cloud storage service provided by Amazon Web Services (AWS). It allows you to store and retrieve any amount of data from anywhere on the web.
 
 What are S3 buckets?
 
 S3 buckets are containers for storing objects (files) in Amazon S3. Each bucket has a unique name globally across all of AWS. You can think of an S3 bucket as a top-level folder that holds your data.
+
+NOTE : **THE SECRET BEHIND THE SUCCESS (11 9's)**
+
+# -----------------------------------------------------
+
+Create s3 bucket
+--
+1) ![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/e9ad030c-3b77-4fd5-821b-e48dc7045065)
+2) The name should be unique be'coz it is golbally accessable and it should be unquie through out the aws accounts available
+3) S3 is global service, why we need to create it on region : S3 buckets are scoped in region but the context is gloablly accessed
+4) Rest all options are same --> Create Bucket
+5)  Let say if aws goes down the availablity zone goes down where s3 is created. What should we do the **99.99999999999** (11 9's) indicates the reliablity of the S3 bucket. 1 CR of objects in S3, anything we uploadin S3 is objects. In s3 our data never got delete, That is be'coz AWS use replication machinesm.
+6)  What exactly AWS does --> Whereever we store the object in create multiple replicas of it availabilies zones, in data centers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -----------------------------------------------------
 
 Why use S3 buckets?
 
@@ -23,6 +52,39 @@ S3 buckets offer several advantages, including:
     Security: S3 offers multiple security features such as encryption, access control, and audit logging.
     Performance: S3 is designed to deliver high performance for data retrieval and storage operations.
     Cost-effective: S3 offers cost-effective storage options and pricing models based on your usage patterns.
+    Reliability : 11 9's realiable
+
+
+Scalability : Store ALMOST unlimited data in a single bucket. However one object should not be more than 5 TB.
+Tip:
+Choose multipart uploads to upload an object if the size of the object is huge.
+
+Security : S3 provides bucket policies, access control, and encryption settings are appropriately
+configured.
+Encrypt data at rest using server-side encryption options provided by S3. Additionally,
+enable encryption in transit by using SSL/TLS for data transfers.
+Enable access logging to capture detailed records of requests made to your S3 bucket.
+Monitor access logs and configure alerts to detect any suspicious activities or unauthorized
+access attempts.
+
+Cost Effective :  Of Course it depends on the storage class that you use ...
+
+![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/0c66ac73-612e-4414-bd03-b0443767fcaf)
+
+REF LINK : https://aws.amazon.com/s3/storage-classes/
+
+NOTE : S3 is like Version Control as well like github
+
+NOTE : Bydefault if we use to store the same file it will replace the file,(If versioning is diabled) IF we enable versioning then it will store the pervious file as well and the new file as well.
+
+![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/dd273caa-34ef-4981-b138-c560d784f812)
+
+![image](https://github.com/pavankumar0077/aws-devops-zero-to-hero/assets/40380941/dbcf22d2-8ee6-4e02-b3a8-0a2255725680)
+
+
+
+
+
 
 ## Creating and Configuring S3 Buckets
 
